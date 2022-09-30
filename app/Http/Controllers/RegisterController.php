@@ -39,12 +39,9 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         $register = new register;
         $register->name = ucfirst($request->nama);
         $register->gender = $request->gender;
-
-        // $register->hobi = $request->hobi;
 
         if ($request->hobi != null) {
             $regs = implode(',', $request->hobi);
